@@ -94,9 +94,9 @@ class CalculationsController < ApplicationController
     @range = @maximum-@minimum
 
     if @count.to_f % 2 == 0
-      @median = (@sorted_numbers[@count.to_f/2]+@sorted_numbers[(@count.to_f/2)+1])/2-1
+      @median = (@sorted_numbers[(@count.to_f/2)-1]+@sorted_numbers[(@count.to_f/2)])/2
     else
-      @median = @sorted_numbers[(@count.to_f+1)/2]-1
+      @median = @sorted_numbers[((@count.to_f+1)/2)-1]
     end
 
     @sum = @numbers.sum
